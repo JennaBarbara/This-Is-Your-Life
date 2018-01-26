@@ -3,6 +3,7 @@ export class origin {
   // ParentsRace: string;
   Birthplace: string;
   // Parents: individual[];
+  NumberofSiblings: Number;
   // Siblings: individual[];
    Family: string;
   // FamilyLifestyle: string;

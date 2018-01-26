@@ -11,7 +11,7 @@ import {origin} from '../Origin';
   styleUrls: ['./origins.component.css']
 })
 export class OriginsComponent implements OnInit {
-  var demo;
+  demo : origin;
   constructor(private originsService: OriginsService) { }
 
   ngOnInit() {
