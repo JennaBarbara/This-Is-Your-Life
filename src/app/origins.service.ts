@@ -5,7 +5,8 @@ import { of } from 'rxjs/observable/of';
 
 import { OriginsComponent } from './origins/origins.component';
 import { origin, individual } from './Origin';
-import { Parents, Birthplaces,FamilyTypes } from './OriginTables';
+import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations }
+ from './OriginTables';
 
 
 @Injectable()
@@ -17,20 +18,55 @@ export class OriginsService {
   return this.GenerateOrigin();
   }
   GenerateOrigin() {
-  //  var myOrigin  = new origin;
-    var myOrigin = {
+   var myOrigin  = new origin;
+
+     myOrigin = {
+          Class: this.GenerateClass(),
+          Race: this.GenerateRace(),
+          Occupation: this.GenerateOccupation(),
+          Alignment: this.GenerateAlignment(),
           ParentsKnown: this.GenerateParents(),
           Birthplace: this.GenerateBirthplace(),
+        //  Siblings: this.GenerateSiblings(),
           NumberofSiblings: this.GenerateNumberofSiblings(),
           Family: this.GenerateFamily()
        };
     return myOrigin;
   }
 
+  GenerateAlignment(){
+    var d = this.RollMultipleDice(3, 6);
+    var result = this.getTableItem(d, Alignments);
+    if (Array.isArray(result)) {
+      d = this.RollTheDice(2);
+      return result[(d-1)];
+    }
+    return result;
+  }
+  GenerateRace(){
+    var d = this.RollTheDice(100);
+    return this.getTableItem(d,Races);
+  }
+  GenerateClass(){
+    var d = this.RollTheDice(100);
+    return this.getTableItem(d,Classes);
+  }
+  GenerateOccupation(){
+    var d = this.RollTheDice(100);
+    return this.getTableItem(d,Occupations);
+  }
+
+
   GenerateParents(){
     var d = this.RollTheDice(100);
     return this.getTableItem(d,Parents);
   }
+
+  // GenerateSiblings(){
+  //   number NumberofSiblings = this.GenerateNumberofSiblings();
+  //
+  // }
+
   GenerateBirthplace(){
     var d = this.RollTheDice(100);
     return this.getTableItem(d,Birthplaces);
@@ -53,7 +89,13 @@ export class OriginsService {
     var d = this.RollTheDice(100);
     return this.getTableItem(d,FamilyTypes);
   }
-
+  RollMultipleDice(n, d) {
+   var result = 0;
+   for(var i=0; i<n; i++){
+      result += this.RollTheDice(d);
+    }
+    return result;
+  }
 
   RollTheDice(d) {
     return  Math.floor(Math.random() * d) + 1;

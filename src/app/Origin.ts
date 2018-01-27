@@ -1,10 +1,14 @@
 export class origin {
+  Race: string;
+  Class: string;
+  Alignment: string;
+  Occupation:string;
   ParentsKnown: string;
   // ParentsRace: string;
   Birthplace: string;
   // Parents: individual[];
-  NumberofSiblings: Number;
-  // Siblings: individual[];
+  NumberofSiblings: number;
+  // Siblings: sibling[];
    Family: string;
   // FamilyLifestyle: string;
   // ChildhoodHome: string;
@@ -13,6 +17,12 @@ export class origin {
 export class individual {
   Alignment: string;
   Occupation:string;
-  Relationship: string;
   Status:string;
+}
+export class sibling extends individual {
+  BirthOrder: string;
+  Relationship: string;
+}
+export class parent extends individual {
+  Absence: string;
 }
