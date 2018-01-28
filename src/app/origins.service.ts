@@ -5,7 +5,7 @@ import { of } from 'rxjs/observable/of';
 
 import { OriginsComponent } from './origins/origins.component';
 import { origin, individual } from './Origin';
-import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations }
+import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes }
  from './OriginTables';
 
 
@@ -21,17 +21,23 @@ export class OriginsService {
    var myOrigin  = new origin;
 
      myOrigin = {
-          Class: this.GenerateClass(),
-          Race: this.GenerateRace(),
+          Class: this.GenericGenerate(100, Classes),
+          Race: this.GenericGenerate(100, Races),
           Occupation: this.GenerateOccupation(),
           Alignment: this.GenerateAlignment(),
-          ParentsKnown: this.GenerateParents(),
-          Birthplace: this.GenerateBirthplace(),
+          ParentsKnown: this.GenericGenerate(100, Parents),
+          Birthplace: this.GenericGenerate(100, Birthplaces),
         //  Siblings: this.GenerateSiblings(),
           NumberofSiblings: this.GenerateNumberofSiblings(),
-          Family: this.GenerateFamily()
+          Family: this.GenericGenerate(100, FamilyTypes),
+          FamilyWealth: this.GenerateFamilyWealth(),
+          ChildhoodMemory: this.GenerateChildhood()
        };
     return myOrigin;
+  }
+  GenericGenerate(n, table){
+    var d = this.RollTheDice(n);
+    return this.getTableItem(d,table);
   }
 
   GenerateAlignment(){
@@ -43,36 +49,40 @@ export class OriginsService {
     }
     return result;
   }
-  GenerateRace(){
-    var d = this.RollTheDice(100);
-    return this.getTableItem(d,Races);
+
+  GenerateChildhood(){
+    var d = this.RollMultipleDice(3, 6);
+    return this.getTableItem(d, ChildhoodMemories);
   }
-  GenerateClass(){
-    var d = this.RollTheDice(100);
-    return this.getTableItem(d,Classes);
+  GenerateFamilyWealth(){
+    var d = this.RollMultipleDice(3, 6);
+    var wealth = this.getTableItem(d, FamilyLifestyles);
+    var home = this.GenerateChildhoodHome(wealth[1]);
+    return [wealth[0], home];
   }
+
+  GenerateChildhoodHome(wealth){
+    var d = this.RollTheDice(100) + Number(wealth);
+    if (d<0)
+      d=0;
+    else if (d>111)
+      d=111;
+    return this.getTableItem(d,FamilyHomes);
+
+  }
+
   GenerateOccupation(){
     var d = this.RollTheDice(100);
     return this.getTableItem(d,Occupations);
   }
-
-
-  GenerateParents(){
-    var d = this.RollTheDice(100);
-    return this.getTableItem(d,Parents);
-  }
-
   // GenerateSiblings(){
   //   number NumberofSiblings = this.GenerateNumberofSiblings();
   //
   // }
 
-  GenerateBirthplace(){
-    var d = this.RollTheDice(100);
-    return this.getTableItem(d,Birthplaces);
-  }
   GenerateNumberofSiblings(){
-    //TODO: add race handling
+    //TODO: add race handlin
+    //alert(this.myOrigin.Race);
     var d = this.RollTheDice(10);
     if (d <=2)
       return 0;
@@ -85,10 +95,11 @@ export class OriginsService {
     else
       return this.RollTheDice(8) + 3;
   }
-  GenerateFamily(){
-    var d = this.RollTheDice(100);
-    return this.getTableItem(d,FamilyTypes);
+
+  RollTheDice(d) {
+    return  Math.floor(Math.random() * d) + 1;
   }
+
   RollMultipleDice(n, d) {
    var result = 0;
    for(var i=0; i<n; i++){
@@ -97,9 +108,6 @@ export class OriginsService {
     return result;
   }
 
-  RollTheDice(d) {
-    return  Math.floor(Math.random() * d) + 1;
-  }
   getTableItem(d,table) {
     var item;
       Object.keys(table).some(function (k) {

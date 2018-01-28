@@ -1,4 +1,31 @@
 
+export const Races = {
+  "1-40": "Human",
+  "41-50": "Dwarf",
+  "51-60": "Elf",
+  "61-70": "Halfling",
+  "71-75": "Dragonborn",
+  "76-80": "Gnome",
+  "81-85": "Half-elf",
+  "86-90": "Half-orc",
+  "91-95": "Tiefling",
+  "96-100": "DM's choice" //TODO something weird with DM's choice. it flickers out on screen
+};
+export const Classes = {
+  "1-7": "Barbarian",
+  "8-14": "Bard",
+  "15-29": "Cleric",
+  "30-36": "Druid",
+  "37-52": "Fighter",
+  "53-58": "Monk",
+  "59-64": "Paladin",
+  "65-70": "Ranger",
+  "71-84": "Rogue",
+  "85-89": "Sorcerer",
+  "90-94": "Warlock",
+  "95-100": "Wizard"
+};
+
 export const Parents = {
 "1-95":"You know who your parents are or were.",
 "96-100":"You do not know who your parents were."
@@ -45,6 +72,56 @@ export const FamilyTypes = {
   "56-75":"Single mother or stepmother",
   "76-100":"Mother and father"
 };
+export const CausesOfDeath = {
+  "1": "Unknown",
+  "2": "Murdered",
+  "3": "Killed in battle",
+  "4": "Accident related to class or occupation",
+  "5": "Accident unrelated to class or occupation",
+  "6-7": "Natural causes, such as disease or old age",
+  "8": "Apparent suicide",
+  "9": "Torn apart by an animal or a natural disaster",
+  "10": "Consumed by a monster",
+  "ll":"Executed for a crime or tortured to death",
+  "12":"Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg"
+};
+export const AbsentParentReasons = {
+  "1": CausesOfDeath, //TODO add death handling
+  "2": "Your parent was imprisoned, enslaved, or otherwise taken away.",
+  "3": "Your parent abandoned you.",
+  "4": "Your parent disappeared to an unknown fate.",
+};
+
+export const FamilyLifestyles = {
+  "3": ["Wretched", "-40"],
+  "4-5": ["Squalid", "-20"],
+  "6-8": ["Poor", "-10"],
+  "9-12": ["Modest","0"],
+  "13-15": ["Comfortable", "10"],
+  "16-17": ["Wealthy", "20"],
+  "18": ["Aristocratic", "40"]
+};
+export const FamilyHomes = {
+  "0":"On the streets",
+  "1-20":"Rundown shack",
+  "21-30":"No permanent residence; you moved around a lot",
+  "31-40":"Encampment or village in the wilderness",
+  "41-50":"Apartment in a rundown neighborhood",
+  "51-70":"Small house",
+  "71-90":"Large house",
+  "91-110":"Mansion",
+  "110-140":"Palace or castle"
+};
+
+export const ChildhoodMemories = {
+  "3":"I am still haunted by my childhood, when I was treated badly by my peers.",
+  "4-5":"I spent most of my childhood alone, with no close friends.",
+  "6-8":"Others saw me as being different or strange, and so I had few companions.",
+  "9-12":"I had a few close friends and lived an ordinary childhood.",
+  "13-15": "I had several friends, and my childhood was generally a happy one.",
+  "16-17": "I always found it easy to make friends, and I loved being around people.",
+  "18": "Everyone knew who I was, and I had friends everywhere I went.",
+};
 
 export const Alignments = {
   "3":["Chaotic evil","Chaotic neutral"],
@@ -74,45 +151,7 @@ export const Occupations = {
   "91-95": "Sailor",
   "96-100": "Soldier"
 };
-export const Races = {
-  "1-40": "Human",
-  "41-50": "Dwarf",
-  "51-60": "Elf",
-  "61-70": "Halfling",
-  "71-75": "Dragonborn",
-  "76-80": "Gnome",
-  "81-85": "Half-elf",
-  "86-90": "Half-orc",
-  "91-95": "Tiefling",
-  "96-100": "DM's choice" //TODO something weird with DM's choice. it flickers out on screen
-};
-export const Classes = {
-  "1-7": "Barbarian",
-  "8-14": "Bard",
-  "15-29": "Cleric",
-  "30-36": "Druid",
-  "37-52": "Fighter",
-  "53-58": "Monk",
-  "59-64": "Paladin",
-  "65-70": "Ranger",
-  "71-84": "Rogue",
-  "85-89": "Sorcerer",
-  "90-94": "Warlock",
-  "95-100": "Wizard"
-};
-export const CausesOfDeath = {
-"1": "Unknown",
-"2": "Murdered",
-"3": "Killed in battle",
-"4": "Accident related to class or occupation",
-"5": "Accident unrelated to class or occupation",
-"6-7": "Natural causes, such as disease or old age",
-"8": "Apparent suicide",
-"9": "Torn apart by an animal or a natural disaster",
-"10": "Consumed by a monster",
-"ll":"Executed for a crime or tortured to death",
-"12":"Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg"
-};
+
 export const Statuses = {
   "3": CausesOfDeath, //TODO add death handling
   "4-5": "Missing or unknown",

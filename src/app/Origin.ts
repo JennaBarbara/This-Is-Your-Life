@@ -10,9 +10,10 @@ export class origin {
   NumberofSiblings: number;
   // Siblings: sibling[];
    Family: string;
-  // FamilyLifestyle: string;
-  // ChildhoodHome: string;
-  // ChildhoodMemories: string;
+  //FamilyLifestyle: string;
+   //ChildhoodHome: string;
+   FamilyWealth: string[];
+   ChildhoodMemory: string;
   }
 export class individual {
   Alignment: string;
