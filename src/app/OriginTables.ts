@@ -83,7 +83,7 @@ export const Races = {
   "76-80": "Gnome",
   "81-85": "Half-elf",
   "86-90": "Half-orc",
-  "9l-95": "Tiefling",
+  "91-95": "Tiefling",
   "96-100": "DM's choice" //TODO something weird with DM's choice. it flickers out on screen
 };
 export const Classes = {
