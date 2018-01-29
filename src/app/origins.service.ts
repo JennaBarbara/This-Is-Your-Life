@@ -21,8 +21,6 @@ export class OriginsService {
    var myOrigin  = new origin;
 
      myOrigin = {
-          Class: this.GenericGenerate(100, Classes),
-          Race: this.GenericGenerate(100, Races),
           Occupation: this.GenerateOccupation(),
           Alignment: this.GenerateAlignment(),
           ParentsKnown: this.GenericGenerate(100, Parents),

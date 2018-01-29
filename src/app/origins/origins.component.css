@@ -1,0 +1,19 @@
+.origins {
+  background-color: #f6f6ef;
+  margin: .5em;
+  padding: .3em 0;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30em;
+}
+.origins h2, p {
+  background-color: #f6f6ef;
+  margin: 25px 25px 25px 25px;
+  padding: .3em 0;
+
+
+}
+
+h2, p, a {
+  font-family: 'Roboto', sans-serif;
+}

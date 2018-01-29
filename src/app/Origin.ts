@@ -1,6 +1,4 @@
 export class origin {
-  Race: string;
-  Class: string;
   Alignment: string;
   Occupation:string;
   ParentsKnown: string;
@@ -10,8 +8,6 @@ export class origin {
   NumberofSiblings: number;
   // Siblings: sibling[];
    Family: string;
-  //FamilyLifestyle: string;
-   //ChildhoodHome: string;
    FamilyWealth: string[];
    ChildhoodMemory: string;
   }

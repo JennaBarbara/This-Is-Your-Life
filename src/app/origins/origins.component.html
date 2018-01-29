@@ -1,23 +1,25 @@
-<p>
-  Class: {{demo.Class}}
-  <br /><br />
-  Race: {{demo.Race}}
-  <br /><br />
-  Alignment:  {{demo.Alignment}}
-  <br /><br />
-  Occupation: {{demo.Occupation}}
-  <br /><br />
-  Do you know your parents? {{demo.ParentsKnown}}
+<div class=origins>
+  <h2>
+  Origins
+  </h2>
+  <p>
+    Class: {{myBasics.Class}} - Race: {{myBasics.Race}} - Alignment:  {{myOrigin.Alignment}}
+
     <br /><br />
-  Where were you born? {{demo.Birthplace}}
-  <br /><br />
-  How many Siblings do you have? {{demo.NumberofSiblings}}
-  <br /><br />
-  Who raised you? {{demo.Family}}
-  <br /><br />
-  What was your economic background? {{demo.FamilyWealth[0]}}
-  <br /><br />
-  What was your childhood home? {{demo.FamilyWealth[1]}}
-  <br /><br />
-  how do you remember your childhood? {{demo.ChildhoodMemory}}
-</p>
+    Occupation: {{myOrigin.Occupation}}
+    <br /><br />
+    Parents: {{myOrigin.ParentsKnown}}
+      <br /><br />
+    Birthplace: {{myOrigin.Birthplace}}
+    <br /><br />
+    Siblings: {{myOrigin.NumberofSiblings}}
+    <br /><br />
+    Raised by: {{myOrigin.Family}}
+    <br /><br />
+    Family Lifestyle: {{myOrigin.FamilyWealth[0]}}
+    <br /><br />
+    Childhood home: {{myOrigin.FamilyWealth[1]}}
+    <br /><br />
+    Childhood memories: {{myOrigin.ChildhoodMemory}}
+  </p>
+</div>

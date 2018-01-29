@@ -9,7 +9,7 @@ export const Races = {
   "81-85": "Half-elf",
   "86-90": "Half-orc",
   "91-95": "Tiefling",
-  "96-100": "DM's choice" //TODO something weird with DM's choice. it flickers out on screen
+  "96-100": "DM's choice"
 };
 export const Classes = {
   "1-7": "Barbarian",
