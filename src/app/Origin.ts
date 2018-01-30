@@ -5,8 +5,8 @@ export class origin {
   // ParentsRace: string;
   Birthplace: string;
   // Parents: individual[];
-  NumberofSiblings: number;
-  // Siblings: sibling[];
+   NumberofSiblings: number;
+   Siblings: sibling[];
    Family: string;
    FamilyWealth: string[];
    ChildhoodMemory: string;

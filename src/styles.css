@@ -2,10 +2,12 @@ body  {
   background-color: #e2e2e2;
 }
 h1 {
+  text-align: center;
   font-family: 'Slabo 27px', serif;
   font-size: 350%;
 }
 
 p, a {
   font-family: 'Roboto', sans-serif;
+  
 }

@@ -25,6 +25,6 @@ export class OriginsComponent implements OnInit {
       this.myBasics = this.basicsService.getBasics();
   }
   getOrigins(): void {
-      this.myOrigin = this.originsService.getOrigins();
+      this.myOrigin = this.originsService.getOrigins(this.myBasics);
   }
 }

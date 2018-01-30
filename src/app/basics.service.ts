@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+import {GenerateIndividual, GenerateAlignment, GenericGenerate, RollTheDice, RollMultipleDice, getTableItem } from './Utilities';
 import { basics } from './Basics';
 import { Races, Classes } from './OriginTables';
 
@@ -15,39 +16,10 @@ export class BasicsService {
    var myBasics  = new basics;
 
      myBasics = {
-          Class: this.GenericGenerate(100, Classes),
-          Race: this.GenericGenerate(100, Races),
+          Class: GenericGenerate(100, Classes),
+          Race: GenericGenerate(100, Races),
        };
     return myBasics;
-  }
-
-  GenericGenerate(n, table){
-    var d = this.RollTheDice(n);
-    return this.getTableItem(d,table);
-  }
-
-  RollTheDice(d) {
-    return  Math.floor(Math.random() * d) + 1;
-  }
-
-  RollMultipleDice(n, d) {
-   var result = 0;
-   for(var i=0; i<n; i++){
-      result += this.RollTheDice(d);
-    }
-    return result;
-  }
-
-  getTableItem(d,table) {
-    var item;
-      Object.keys(table).some(function (k) {
-          var part = k.split('-');
-          if ((d >= Number(part[0]) && d <= Number(part[1])) || d == Number(part[0])) {
-              item = table[k];
-              return true;
-          }
-      });
-      return item;
   }
 
 }

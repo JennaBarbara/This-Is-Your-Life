@@ -12,7 +12,11 @@
       <br /><br />
     Birthplace: {{myOrigin.Birthplace}}
     <br /><br />
-    Siblings: {{myOrigin.NumberofSiblings}}
+    Siblings:
+    <li *ngFor="let sibling of myOrigin.Siblings">
+     {{sibling.Alignment}} - {{sibling.Occupation}} - {{sibling.Status}}
+   </li>
+
     <br /><br />
     Raised by: {{myOrigin.Family}}
     <br /><br />

@@ -86,7 +86,7 @@ export const CausesOfDeath = {
   "12":"Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg"
 };
 export const AbsentParentReasons = {
-  "1": CausesOfDeath, //TODO add death handling
+  "1": "Dead", //TODO add death handling
   "2": "Your parent was imprisoned, enslaved, or otherwise taken away.",
   "3": "Your parent abandoned you.",
   "4": "Your parent disappeared to an unknown fate.",
@@ -146,19 +146,19 @@ export const Occupations = {
   "56-60": "Hunter or trapper",
   "61-75": "Laborer",
   "76-80": "Merchant",
-  "81-35": "Politician or bureaucrat",
+  "81-85": "Politician or bureaucrat",
   "86-90": "Priest",
   "91-95": "Sailor",
   "96-100": "Soldier"
 };
 
 export const Statuses = {
-  "3": CausesOfDeath, //TODO add death handling
+  "3": "Dead",
   "4-5": "Missing or unknown",
   "6-8": "Alive, but doing poorly due to injury, financial trouble, or relationship difficulties",
   "9-12": "Alive and well",
-  "l3-l5":"Alive and quite successful",
-  "16-l7":"Alive and infamous",
+  "13-15":"Alive and quite successful",
+  "16-17":"Alive and infamous",
   "18":"Alive and famous"
 };
 
