@@ -15,13 +15,13 @@
 }
 
 }
-.origins h2, p {
+.origins .text {
   background-color: #f6f6ef;
   margin: 25px 25px 25px 25px;
   padding: .3em 0;
 }
 
-h2, p, a {
+.text {
   font-family: 'Roboto', sans-serif;
 }
 

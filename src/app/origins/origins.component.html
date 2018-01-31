@@ -2,7 +2,8 @@
   <h2>
   Origins
   </h2>
-  <p>
+
+  <div class=text>
     Class: {{myBasics.Class}} - Race: {{myBasics.Race}} - Alignment:  {{myOrigin.Alignment}}
 
     <br /><br />
@@ -12,12 +13,14 @@
       <br /><br />
     Birthplace: {{myOrigin.Birthplace}}
     <br /><br />
-    Siblings:
+    <div *ngIf="myOrigin.Siblings.length == 0">Siblings: No siblings</div>
+    <div *ngIf="myOrigin.Siblings.length > 0">
+      Siblings: 
     <li *ngFor="let sibling of myOrigin.Siblings">
      {{sibling.Alignment}} - {{sibling.Occupation}} - {{sibling.Status}}
    </li>
-
-    <br /><br />
+    </div>
+    <br />
     Raised by: {{myOrigin.Family}}
     <br /><br />
     Family Lifestyle: {{myOrigin.FamilyWealth[0]}}
@@ -25,5 +28,5 @@
     Childhood home: {{myOrigin.FamilyWealth[1]}}
     <br /><br />
     Childhood memories: {{myOrigin.ChildhoodMemory}}
-  </p>
+  </div>
 </div>

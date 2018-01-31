@@ -27,7 +27,7 @@ export class OriginsService {
           ParentsKnown: GenericGenerate(100, Parents),
           Birthplace: GenericGenerate(100, Birthplaces),
           Siblings: this.GenerateSiblings(myBasics.Race),
-          NumberofSiblings: this.GenerateNumberofSiblings(myBasics.Race),
+        //  NumberofSiblings: this.GenerateNumberofSiblings(myBasics.Race),
           Family: GenericGenerate(100, FamilyTypes),
           FamilyWealth: this.GenerateFamilyWealth(),
           ChildhoodMemory: this.GenerateChildhood()
@@ -58,6 +58,8 @@ export class OriginsService {
 
   GenerateSiblings(race){
     var NumberofSiblings = this.GenerateNumberofSiblings(race);
+    // if(NumberofSiblings == 0)
+    //   return "No Siblings"
     var siblings = [];
     for (var i = 0; i < NumberofSiblings; i++) {
       siblings.push(GenerateIndividual());
