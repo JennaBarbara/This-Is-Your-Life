@@ -167,3 +167,10 @@ export const Relationships = {
   "5-10" :"Friendly",
   "11-12":"Indifferent"
 };
+
+export const BirthOrder = {
+   "2": "Twin, triplet, or quadruplet",
+" 3-7": "Older",
+"8-12": "Younger"
+
+};

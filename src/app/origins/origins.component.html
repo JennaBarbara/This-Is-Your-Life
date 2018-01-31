@@ -15,9 +15,9 @@
     <br /><br />
     <div *ngIf="myOrigin.Siblings.length == 0">Siblings: No siblings</div>
     <div *ngIf="myOrigin.Siblings.length > 0">
-      Siblings: 
+      Siblings:
     <li *ngFor="let sibling of myOrigin.Siblings">
-     {{sibling.Alignment}} - {{sibling.Occupation}} - {{sibling.Status}}
+    {{sibling.BirthOrder}} - {{sibling.Alignment}} - {{sibling.Occupation}} - {{sibling.Status}} - {{sibling.Relationship}} to me
    </li>
     </div>
     <br />

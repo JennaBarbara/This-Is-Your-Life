@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { OriginsComponent } from './origins/origins.component';
 import { origin, individual } from './Origin';
 import {GenerateIndividual, GenerateAlignment, GenericGenerate,  RollTheDice, RollMultipleDice, getTableItem } from './Utilities';
-import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes }
+import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes, BirthOrder , Relationships }
  from './OriginTables';
 
 
@@ -63,10 +63,19 @@ export class OriginsService {
     var siblings = [];
     for (var i = 0; i < NumberofSiblings; i++) {
       siblings.push(GenerateIndividual());
+      siblings[i].BirthOrder = this.GenerateBirthOrder();
+      siblings[i].Relationship = this.GenerateRelationship();
     }
    return siblings;
   }
-
+  GenerateBirthOrder(){
+    var d = RollMultipleDice(2, 6);
+    return getTableItem(d, BirthOrder );
+  }
+  GenerateRelationship(){
+    var d = RollMultipleDice(3, 6);
+    return getTableItem(d, Relationships);
+  }
   GenerateNumberofSiblings(race){
     var raceModifier=0;
     if(race == "Dwarf" || race == "Elf" )
