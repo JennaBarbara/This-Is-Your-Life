@@ -2,7 +2,7 @@
   background-color: #f6f6ef;
   margin: .5em;
   padding: .3em 0;
-  border: 1px solid black;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   border-radius: 10px;
 
 }
@@ -26,5 +26,6 @@
 }
 
 h2 {
-  text-align: center;
+  font-family: 'Slabo 27px', serif;
+margin: 25px 25px 25px 25px;
 }

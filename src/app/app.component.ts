@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+//import { OriginsComponent } from '/origins/origins.component';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'This is Your Life';
+
+  // function NewGenerate {
+  //   OriginsComponent.ngOnInit();
+  // }
 }
