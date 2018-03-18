@@ -1,4 +1,3 @@
-
 export const Races = {
   "1-40": "Human",
   "41-50": "Dwarf",
@@ -9,7 +8,9 @@ export const Races = {
   "81-85": "Half-elf",
   "86-90": "Half-orc",
   "91-95": "Tiefling",
-  "96-100": "DM's choice"
+  "96-100": "DM's choice",
+  n : 1,
+  d : 100
 };
 export const Classes = {
   "1-7": "Barbarian",
@@ -23,12 +24,16 @@ export const Classes = {
   "71-84": "Rogue",
   "85-89": "Sorcerer",
   "90-94": "Warlock",
-  "95-100": "Wizard"
+  "95-100": "Wizard",
+  n : 1,
+  d : 100
 };
 
 export const Parents = {
 "1-95":"You know who your parents are or were.",
-"96-100":"You do not know who your parents were."
+"96-100":"You do not know who your parents were.",
+n : 1,
+d : 100
 };
 
 //TODO:add nonhuman parents tables
@@ -56,7 +61,9 @@ export const Birthplaces = {
    "97":"In the Shadowfell",
    "98":"On the Astral Plane or the Ethereal Plane",
    "99":"On an Inner Plane of your choice",
-  "100":"On an Outer Plane of your choice"
+  "100":"On an Outer Plane of your choice",
+  n : 1,
+  d : 100
 };
 
 export const FamilyTypes = {
@@ -70,26 +77,32 @@ export const FamilyTypes = {
   "26-35":"Adoptive family (same or different race)",
   "36-55":"Single father or stepfather",
   "56-75":"Single mother or stepmother",
-  "76-100":"Mother and father"
+  "76-100":"Mother and father",
+  n : 1,
+  d : 100
 };
 export const CausesOfDeath = {
-  "1": "Unknown",
-  "2": "Murdered",
-  "3": "Killed in battle",
-  "4": "Accident related to class or occupation",
-  "5": "Accident unrelated to class or occupation",
-  "6-7": "Natural causes, such as disease or old age",
-  "8": "Apparent suicide",
-  "9": "Torn apart by an animal or a natural disaster",
-  "10": "Consumed by a monster",
-  "ll":"Executed for a crime or tortured to death",
-  "12":"Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg"
+  "1": "Dead, cause of death: Unknown",
+  "2": "Dead, cause of death: Murdered",
+  "3": "Dead, cause of death: Killed in battle",
+  "4": "Dead, cause of death: Accident related to class or occupation",
+  "5": "Dead, cause of death: Accident unrelated to class or occupation",
+  "6-7": "Dead, cause of death: Natural causes, such as disease or old age",
+  "8": "Dead, cause of death: Apparent suicide",
+  "9": "Dead, cause of death: Torn apart by an animal or a natural disaster",
+  "10": "Dead, cause of death: Consumed by a monster",
+  "ll":"Dead, cause of death: Executed for a crime or tortured to death",
+  "12":"Dead, cause of death: Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg",
+  n : 1,
+  d : 12
 };
 export const AbsentParentReasons = {
-  "1": "Dead", //TODO add death handling
+  "1": CausesOfDeath, //TODO add death handling
   "2": "Your parent was imprisoned, enslaved, or otherwise taken away.",
   "3": "Your parent abandoned you.",
   "4": "Your parent disappeared to an unknown fate.",
+  n : 1,
+  d : 4
 };
 
 export const FamilyLifestyles = {
@@ -99,7 +112,9 @@ export const FamilyLifestyles = {
   "9-12": ["Modest","0"],
   "13-15": ["Comfortable", "10"],
   "16-17": ["Wealthy", "20"],
-  "18": ["Aristocratic", "40"]
+  "18": ["Aristocratic", "40"],
+  n : 3,
+  d : 6
 };
 export const FamilyHomes = {
   "0":"On the streets",
@@ -110,7 +125,9 @@ export const FamilyHomes = {
   "51-70":"Small house",
   "71-90":"Large house",
   "91-110":"Mansion",
-  "110-140":"Palace or castle"
+  "110-140":"Palace or castle",
+  n : 1,
+  d : 100
 };
 
 export const ChildhoodMemories = {
@@ -121,6 +138,8 @@ export const ChildhoodMemories = {
   "13-15": "I had several friends, and my childhood was generally a happy one.",
   "16-17": "I always found it easy to make friends, and I loved being around people.",
   "18": "Everyone knew who I was, and I had friends everywhere I went.",
+  n : 3,
+  d : 6
 };
 
 export const Alignments = {
@@ -130,12 +149,14 @@ export const Alignments = {
   "9-12":"Neutral",
   "13-15":"Neutral good",
   "16-17":["Lawful good", "Lawful neutral"],
-  "18":["Chaotic good", "Chaotic neutral"]
+  "18":["Chaotic good", "Chaotic neutral"],
+  n : 3,
+  d : 6
 };
 
 export const Occupations = {
   "1-5": "Academic",
-  "06-10": "Adventurer", // TODO (roll on the Class table)
+  "06-10": Classes, // TODO (roll on the Class table)
   "11": "Aristocrat",
   "12-26": "Artisan or guild member",
   "27-31": "Criminal",
@@ -149,28 +170,36 @@ export const Occupations = {
   "81-85": "Politician or bureaucrat",
   "86-90": "Priest",
   "91-95": "Sailor",
-  "96-100": "Soldier"
+  "96-100": "Soldier",
+  n : 1,
+  d : 100
 };
 
 export const Statuses = {
-  "3": "Dead",
+  "3": CausesOfDeath, //TODO add death handling
   "4-5": "Missing or unknown",
   "6-8": "Alive, but doing poorly due to injury, financial trouble, or relationship difficulties",
   "9-12": "Alive and well",
   "13-15":"Alive and quite successful",
   "16-17":"Alive and infamous",
-  "18":"Alive and famous"
+  "18":"Alive and famous",
+  n : 3,
+  d : 6
 };
 
 export const Relationships = {
-  "3-4":"Hostile",
+  "3-4" :"Hostile",
   "5-10" :"Friendly",
-  "11-12":"Indifferent"
+  "11-12":"Indifferent",
+  n : 3,
+  d : 4
 };
 
 export const BirthOrder = {
    "2": "Twin, triplet, or quadruplet",
 " 3-7": "Older",
-"8-12": "Younger"
+"8-12": "Younger",
+n : 2,
+d : 6
 
 };

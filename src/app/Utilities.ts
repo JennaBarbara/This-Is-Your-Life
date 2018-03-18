@@ -1,15 +1,30 @@
 
 import { origin, individual } from './Origin';
-import { Parents, Statuses, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes, CausesOfDeath }
+import {Parents, Statuses, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes, CausesOfDeath }
  from './OriginTables';
 
+
+
+ export function GenericGenerate(table){
+   var total = RollMultipleDice(table.n, table.d);
+   var result = getTableItem(total, table);
+
+   if (Array.isArray(result)) {
+     total = RollTheDice(2);
+     return result[(total-1)];
+   }
+   if ( (typeof result) == "object" ) {
+     return GenericGenerate(result);
+   }
+   return result;
+ }
 
 export function GenerateIndividual(){
   var myIndividual = new individual;
   myIndividual = {
-    Alignment: GenerateAlignment(),
-    Occupation: GenericGenerate(100, Occupations),
-    Status: GenerateStatus()
+    Alignment: GenericGenerate(Alignments),
+    Occupation: GenericGenerate(Occupations),
+    Status: GenericGenerate(Statuses)
 
   }
   return myIndividual
@@ -23,21 +38,6 @@ export function GenerateAlignment(){
     return result[(d-1)];
   }
   return result;
-}
-
-export function GenerateStatus(){
-  var d = RollMultipleDice(3, 6);
-  var result = getTableItem(d, Statuses);
-  if (result=="Dead") {
-    d = RollTheDice(12);
-    return "Dead, death caused by: " + getTableItem(d,CausesOfDeath);
-  }
-  return result;
-}
-
-export function GenericGenerate(n, table){
-  var d = RollTheDice(n);
-  return getTableItem(d,table);
 }
 
 export function RollTheDice(d) {

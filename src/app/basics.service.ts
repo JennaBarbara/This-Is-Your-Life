@@ -16,8 +16,8 @@ export class BasicsService {
    var myBasics  = new basics;
 
      myBasics = {
-          Class: GenericGenerate(100, Classes),
-          Race: GenericGenerate(100, Races),
+          Class: GenericGenerate(Classes),
+          Race: GenericGenerate( Races),
        };
     return myBasics;
   }

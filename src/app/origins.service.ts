@@ -5,7 +5,7 @@ import { of } from 'rxjs/observable/of';
 
 import { OriginsComponent } from './origins/origins.component';
 import { origin, individual } from './Origin';
-import {GenerateIndividual, GenerateAlignment, GenericGenerate,  RollTheDice, RollMultipleDice, getTableItem } from './Utilities';
+import { GenerateIndividual, GenerateAlignment, GenericGenerate,  RollTheDice, RollMultipleDice, getTableItem } from './Utilities';
 import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes, BirthOrder , Relationships }
  from './OriginTables';
 
@@ -22,23 +22,19 @@ export class OriginsService {
    var myOrigin  = new origin;
 
      myOrigin = {
-          Occupation: GenericGenerate(100, Occupations),
-          Alignment: GenerateAlignment(),
-          ParentsKnown: GenericGenerate(100, Parents),
-          Birthplace: GenericGenerate(100, Birthplaces),
-          Siblings: this.GenerateSiblings(myBasics.Race),
+          Occupation: GenericGenerate( Occupations ),
+          Alignment: GenericGenerate( Alignments ),
+          ParentsKnown: GenericGenerate( Parents ),
+          Birthplace: GenericGenerate( Birthplaces ),
+          Siblings: this.GenerateSiblings( myBasics.Race ),
         //  NumberofSiblings: this.GenerateNumberofSiblings(myBasics.Race),
-          Family: GenericGenerate(100, FamilyTypes),
+          Family: GenericGenerate( FamilyTypes ),
           FamilyWealth: this.GenerateFamilyWealth(),
-          ChildhoodMemory: this.GenerateChildhood()
+          ChildhoodMemory: GenericGenerate( ChildhoodMemories )
        };
     return myOrigin;
   }
 
-  GenerateChildhood(){
-    var d = RollMultipleDice(3, 6);
-    return getTableItem(d, ChildhoodMemories);
-  }
   GenerateFamilyWealth(){
     var d = RollMultipleDice(3, 6);
     var wealth = getTableItem(d, FamilyLifestyles);
@@ -53,34 +49,22 @@ export class OriginsService {
     else if (d>111)
       d=111;
     return getTableItem(d,FamilyHomes);
-
   }
 
   GenerateSiblings(race){
     var NumberofSiblings = this.GenerateNumberofSiblings(race);
-    // if(NumberofSiblings == 0)
-    //   return "No Siblings"
     var siblings = [];
     for (var i = 0; i < NumberofSiblings; i++) {
       siblings.push(GenerateIndividual());
-      siblings[i].BirthOrder = this.GenerateBirthOrder();
-      siblings[i].Relationship = this.GenerateRelationship();
+      siblings[i].BirthOrder = GenericGenerate( BirthOrder );
+      siblings[i].Relationship = GenericGenerate( Relationships );
     }
    return siblings;
   }
-  GenerateBirthOrder(){
-    var d = RollMultipleDice(2, 6);
-    return getTableItem(d, BirthOrder );
-  }
-  GenerateRelationship(){
-    var d = RollMultipleDice(3, 6);
-    return getTableItem(d, Relationships);
-  }
   GenerateNumberofSiblings(race){
     var raceModifier=0;
-    if(race == "Dwarf" || race == "Elf" )
+    if(race == "Dwarf" || race == "Elf" ) 
       raceModifier= -2;
-
     var d = RollTheDice(10) + raceModifier;
     if (d <=2)
       return 0;
