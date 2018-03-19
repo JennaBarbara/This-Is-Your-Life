@@ -1,5 +1,4 @@
 export class origin {
-  Alignment: string;
   Occupation:string;
   ParentsKnown: string;
   // ParentsRace: string;

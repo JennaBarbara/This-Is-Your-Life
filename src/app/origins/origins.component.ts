@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 import { OriginsService } from '../origins.service';
 import {origin} from '../Origin';
@@ -13,18 +13,15 @@ import {basics} from '../Basics';
   styleUrls: ['./origins.component.css']
 })
 export class OriginsComponent implements OnInit {
-  myBasics : basics;
+  @Input() myBasics : basics;
   myOrigin : origin;
-  constructor(private basicsService: BasicsService, private originsService: OriginsService) { }
+  constructor(private originsService: OriginsService) { }
 
   ngOnInit() {
-    this.getBasics();
     this.getOrigins();
   }
-  getBasics(): void {
-      this.myBasics = this.basicsService.getBasics();
-  }
+
   getOrigins(): void {
-      this.myOrigin = this.originsService.getOrigins(this.myBasics);
+      this.myOrigin = this.originsService.getOrigins(this.myBasics); //TODO use special input
   }
 }

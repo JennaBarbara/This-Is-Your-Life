@@ -23,7 +23,6 @@ export class OriginsService {
 
      myOrigin = {
           Occupation: GenericGenerate( Occupations ),
-          Alignment: GenericGenerate( Alignments ),
           ParentsKnown: GenericGenerate( Parents ),
           Birthplace: GenericGenerate( Birthplaces ),
           Siblings: this.GenerateSiblings( myBasics.Race ),
@@ -63,7 +62,7 @@ export class OriginsService {
   }
   GenerateNumberofSiblings(race){
     var raceModifier=0;
-    if(race == "Dwarf" || race == "Elf" ) 
+    if(race == "Dwarf" || race == "Elf" )
       raceModifier= -2;
     var d = RollTheDice(10) + raceModifier;
     if (d <=2)

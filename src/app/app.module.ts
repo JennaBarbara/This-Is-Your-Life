@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { OriginsComponent } from './origins/origins.component';
 import { BasicsService } from './basics.service';
 import { OriginsService } from './origins.service';
+import { BasicsComponent } from './basics/basics.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    BasicsComponent,
     OriginsComponent
   ],
   imports: [
