@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {GenerateIndividual, GenerateAlignment, GenericGenerate, RollTheDice, RollMultipleDice, getTableItem } from './Utilities';
 import { basics } from './Basics';
-import { Races, Classes, Alignments } from './OriginTables';
+import { Races, Classes, Alignments, Backgrounds } from './OriginTables';
 
 @Injectable()
 export class BasicsService {
@@ -18,7 +18,8 @@ export class BasicsService {
      myBasics = {
           Class: GenericGenerate(Classes),
           Race: GenericGenerate( Races),
-          Alignment: GenericGenerate( Alignments )
+          Alignment: GenericGenerate( Alignments ),
+          Background: GenericGenerate( Backgrounds )
        };
     return myBasics;
   }

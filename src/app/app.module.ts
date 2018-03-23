@@ -7,6 +7,8 @@ import { OriginsComponent } from './origins/origins.component';
 import { BasicsService } from './basics.service';
 import { OriginsService } from './origins.service';
 import { BasicsComponent } from './basics/basics.component';
+import { PersonaldecisionsComponent } from './personaldecisions/personaldecisions.component';
+import { PersonaldecisionsService } from './personaldecisions.service';
 
 
 
@@ -14,12 +16,13 @@ import { BasicsComponent } from './basics/basics.component';
   declarations: [
     AppComponent,
     BasicsComponent,
-    OriginsComponent
+    OriginsComponent,
+    PersonaldecisionsComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [BasicsService, OriginsService],
+  providers: [BasicsService, OriginsService, PersonaldecisionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

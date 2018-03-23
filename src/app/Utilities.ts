@@ -54,7 +54,7 @@ export function RollMultipleDice(n, d) {
 
 export function getTableItem(d,table) {
   var item;
-    Object.keys(table).some(function (k) {
+  Object.keys(table).some(function (k) {
         var part = k.split('-');
         if ((d >= Number(part[0]) && d <= Number(part[1])) || d == Number(part[0])) {
             item = table[k];

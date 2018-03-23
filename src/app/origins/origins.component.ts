@@ -15,6 +15,7 @@ import {basics} from '../Basics';
 export class OriginsComponent implements OnInit {
   @Input() myBasics : basics;
   myOrigin : origin;
+
   constructor(private originsService: OriginsService) { }
 
   ngOnInit() {
@@ -22,6 +23,6 @@ export class OriginsComponent implements OnInit {
   }
 
   getOrigins(): void {
-      this.myOrigin = this.originsService.getOrigins(this.myBasics); //TODO use special input
+      this.myOrigin = this.originsService.getOrigins(this.myBasics);
   }
 }
