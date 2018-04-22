@@ -15,6 +15,7 @@ import {basics} from '../Basics';
 export class PersonaldecisionsComponent implements OnInit {
   @Input() myBasics : basics;
   myPersonalDecisions : personaldecisions;
+  grammer1 : String;
 
   constructor(private PersonaldecisionsService: PersonaldecisionsService) { }
 
@@ -25,6 +26,11 @@ export class PersonaldecisionsComponent implements OnInit {
   getPersonalDecisions(): void {
     //this.PersonaldecisionsService.getPersonalDecisions(this.myBasics);
     this.myPersonalDecisions = this.PersonaldecisionsService.getPersonalDecisions(this.myBasics);
+    if(this.myBasics.Background[0] == 'A' || this.myBasics.Background[0] == 'E' || this.myBasics.Background[0] == 'U' || this.myBasics.Background[0] == 'O'){
+        this.grammer1 = "an";
+    }
+    else { this.grammer1 = "a"; }
+
   }
 
 }

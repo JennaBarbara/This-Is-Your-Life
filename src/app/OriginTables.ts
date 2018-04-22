@@ -10,7 +10,7 @@ export const Races = {
   "91-95": "Tiefling",
   "96-100": "DM's choice",
   n : 1,
-  d : 100
+  d : 95
 };
 export const Classes = {
   "1-7": "Barbarian",

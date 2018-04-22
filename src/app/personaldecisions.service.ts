@@ -16,7 +16,6 @@ export class PersonaldecisionsService {
   }
 
   GeneratePersonalDecisions(myBasics){
-    this.getReasonsTable(myBasics.Background, backgrounds);
     var myBackgroundTable = this.getReasonsTable(myBasics.Background, backgrounds);
     var myClassTable = this.getReasonsTable(myBasics.Class, classes);
     var myPersonalDecisions = new personaldecisions;

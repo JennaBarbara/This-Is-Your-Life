@@ -9,6 +9,9 @@ import { OriginsService } from './origins.service';
 import { BasicsComponent } from './basics/basics.component';
 import { PersonaldecisionsComponent } from './personaldecisions/personaldecisions.component';
 import { PersonaldecisionsService } from './personaldecisions.service';
+import { LifeeventsComponent } from './lifeevents/lifeevents.component';
+import { LifeeventsService } from './lifeevents.service';
+
 
 
 
@@ -17,12 +20,13 @@ import { PersonaldecisionsService } from './personaldecisions.service';
     AppComponent,
     BasicsComponent,
     OriginsComponent,
-    PersonaldecisionsComponent
+    PersonaldecisionsComponent,
+    LifeeventsComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [BasicsService, OriginsService, PersonaldecisionsService],
+  providers: [BasicsService, OriginsService, PersonaldecisionsService, LifeeventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
