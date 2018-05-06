@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { GenericGenerate, RollMultipleDice } from './Utilities';
-
-import { StartingAges } from './LifeEventTables';
+import { Life } from './LifeEvent';
+import { StartingAges, LifeEvents } from './LifeEventTables';
 
 @Injectable()
 export class LifeeventsService {
@@ -15,17 +15,53 @@ export class LifeeventsService {
 
   GenerateLifeEvents(myBasics){
 
-    //var age = this.generateAge(myBasics);
-    // var myClassTable = this.getReasonsTable(myBasics.Class, classes);
-    // var myPersonalDecisions = new personaldecisions;
-    // myPersonalDecisions = {
-    //      BackgroundReasons: GenericGenerate(myBackgroundTable),
-    //      ClassReasons: GenericGenerate(myClassTable)
-    //   };
-    // return myPersonalDecisions;
-
-    return 0;
+    var age = this.generateAge(myBasics);
+    var myLife = new Life;
+    myLife = {
+         Age: age,
+         Events: this.generateEvents(age)
+      };
+    return myLife;
   }
+
+ generateEvents(age) {
+   var NumberOfEvents = this.generateNumberOfEvents(age);
+   console.log(NumberOfEvents);
+
+   var Events = new Array();
+   for( var i = 0; i < NumberOfEvents; i++ ) {
+        var event = GenericGenerate( LifeEvents );
+        if(event == "diviner"){
+          event = "Your fortune was read by a diviner. The diviner saw the following in your future: " + GenericGenerate( LifeEvents );
+        }
+        Events.push( event );
+   }
+   return Events;
+  // return NumberOfEvents;
+ }
+
+ generateNumberOfEvents(age) {
+    if( age < 20) {
+      return 1;
+    }
+    else if(age < 30)
+    {
+      return RollMultipleDice(1, 4);
+    }
+    else if(age < 40)
+    {
+      return RollMultipleDice(1, 6);
+    }
+    else if(age < 50)
+    {
+      return RollMultipleDice(1, 8);
+    }
+    else if(age < 60)
+    {
+      return RollMultipleDice(1, 10);
+    }
+      return RollMultipleDice(1, 12);
+ }
 
   generateAge(myBasics) {
     var AgeTable =  StartingAges[myBasics.Race];

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { LifeeventsService } from '../lifeevents.service';
+import { Life } from '../LifeEvent';
+
+import {basics} from '../Basics';
 
 @Component({
   selector: 'app-lifeevents',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lifeevents.component.css']
 })
 export class LifeeventsComponent implements OnInit {
+  @Input() myBasics : basics;
+  myLife : Life;
 
-  constructor() { }
+  constructor(private lifeService: LifeeventsService ) { }
 
   ngOnInit() {
+    this.getLife();
   }
 
+  getLife(): void {
+      this.myLife = this.lifeService.getLifeEvents(this.myBasics);
+  }
 }

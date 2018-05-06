@@ -1,1 +1,13 @@
-
+<div class=origins>
+  <h2>
+  Life Events
+  </h2>
+<div class=text>
+  You are {{myLife.Age}} years old.
+  <br /><br />
+  You've expericed the following life events:
+<li *ngFor="let event of myLife.Events">
+{{event}}
+</li>
+</div>
+</div>

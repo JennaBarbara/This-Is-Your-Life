@@ -1,5 +1,6 @@
 
 import { origin, individual } from './Origin';
+import  { LifeEvents } from './LifeEventTables';
 import {Parents, Statuses, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes, CausesOfDeath }
  from './OriginTables';
 
@@ -8,7 +9,6 @@ import {Parents, Statuses, Birthplaces,FamilyTypes, Alignments, Races, Classes, 
  export function GenericGenerate(table){
    var total = RollMultipleDice(table.n, table.d);
    var result = getTableItem(total, table);
-
    if (Array.isArray(result)) {
      total = RollTheDice(2);
      return result[(total-1)];
