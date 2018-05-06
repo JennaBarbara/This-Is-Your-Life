@@ -116,7 +116,7 @@ export const CausesOfDeath = {
   d : 12
 };
 export const AbsentParentReasons = {
-  "1": CausesOfDeath, //TODO add death handling
+  "1": CausesOfDeath,
   "2": "Your parent was imprisoned, enslaved, or otherwise taken away.",
   "3": "Your parent abandoned you.",
   "4": "Your parent disappeared to an unknown fate.",
@@ -175,7 +175,7 @@ export const Alignments = {
 
 export const Occupations = {
   "1-5": "Academic",
-  "06-10": Classes, // TODO (roll on the Class table)
+  "06-10": Classes,
   "11": "Aristocrat",
   "12-26": "Artisan or guild member",
   "27-31": "Criminal",

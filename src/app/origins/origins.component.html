@@ -10,11 +10,15 @@
       <br /><br />
     Birthplace: {{myOrigin.Birthplace}}
     <br /><br />
-    <div *ngIf="myOrigin.Siblings.length == 0">Siblings: No siblings</div>
-    <div *ngIf="myOrigin.Siblings.length > 0">
-      Siblings:
+    <div *ngIf="myOrigin.Siblings.length == 0">Siblings: You have no siblings</div>
+    <div *ngIf="myOrigin.Siblings.length == 1">Siblings: You have One sibling with the following traits
     <li *ngFor="let sibling of myOrigin.Siblings">
-    {{sibling.BirthOrder}} - {{sibling.Alignment}} - {{sibling.Occupation}} - {{sibling.Status}} - {{sibling.Relationship}} to me
+    <b>Age:</b> {{sibling.BirthOrder}} than me | <b>Alignment:</b> {{sibling.Alignment}} | <b>Occupation:</b> {{sibling.Occupation}} | <b>Status:</b> {{sibling.Status}} | <b>Relationship:</b> {{sibling.Relationship}} to me
+    </li>
+    </div>
+    <div *ngIf="myOrigin.Siblings.length > 1">Siblings: You have {{myOrigin.Siblings.length}} siblings with the following traits
+    <li *ngFor="let sibling of myOrigin.Siblings">
+    <b>Age:</b> {{sibling.BirthOrder}} than me | <b>Alignment:</b> {{sibling.Alignment}} | <b>Occupation:</b> {{sibling.Occupation}} | <b>Status:</b> {{sibling.Status}} | <b>Relationship:</b> {{sibling.Relationship}} to me
    </li>
     </div>
     <br />

@@ -88,7 +88,7 @@ export const Adventures =
 export const ArcaneMatters =
 {
   "1" : "You encountered something magical. You were charmed or frightened by a spell.",
-  "2" : "You encountered something magical. You were injured by the effect ofa spell.",
+  "2" : "You encountered something magical. You were injured by the effect of a spell.",
   "3" : "You encountered something magical. You witnessed a powerful spell being cast by a cleric, a druid, a sorcerer, a warlock, or a wizard.",
   "4" : "You encountered something magical. You drank a potion (of the DM's choice).",
   "5" : "You encountered something magical. You found a spell scroll (of the DM's choice) and succeeded in casting the Spell it contained.",

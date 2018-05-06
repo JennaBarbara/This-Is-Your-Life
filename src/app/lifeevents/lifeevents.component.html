@@ -5,7 +5,8 @@
 <div class=text>
   You are {{myLife.Age}} years old.
   <br /><br />
-  You've expericed the following life events:
+  <div *ngIf="myLife.Events.length == 1">You have expericed the following life event:</div>
+<div *ngIf=" myLife.Events.length > 1">You have expericed the following life events:</div>
 <li *ngFor="let event of myLife.Events">
 {{event}}
 </li>

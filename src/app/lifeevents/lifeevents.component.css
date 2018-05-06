@@ -21,6 +21,10 @@
   padding: .3em 0;
 }
 
+.origins li {
+margin-left: 15px;
+}
+
 .text {
   font-family: 'Roboto', sans-serif;
 }
