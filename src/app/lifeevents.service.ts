@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { GenericGenerate, RollMultipleDice } from './Utilities';
+import { GenericGenerate, RollMultipleDice, getTableItem } from './Utilities';
 import { Life } from './LifeEvent';
-import { StartingAges, LifeEvents } from './LifeEventTables';
+import { StartingAges, LifeEvents, Punishments, Crimes, CausesOfDeath} from './LifeEventTables';
+import { Occupations, Races, Alignments, Classes} from './OriginTables';
 
 @Injectable()
 export class LifeeventsService {
@@ -26,19 +27,63 @@ export class LifeeventsService {
 
  generateEvents(age) {
    var NumberOfEvents = this.generateNumberOfEvents(age);
-   console.log(NumberOfEvents);
-
+   console.log ( NumberOfEvents);
    var Events = new Array();
    for( var i = 0; i < NumberOfEvents; i++ ) {
-        var event = GenericGenerate( LifeEvents );
-        if(event == "diviner"){
-          event = "Your fortune was read by a diviner. The diviner saw the following in your future: " + GenericGenerate( LifeEvents );
-        }
+        var event = this.generateEvent(LifeEvents);
         Events.push( event );
    }
    return Events;
-  // return NumberOfEvents;
  }
+ generateEvent(table) {
+   var total = RollMultipleDice(table.n, table.d);
+   var event = getTableItem(total, table);
+   if(event == "diviner"){
+     event = "Your fortune was read by a diviner. The diviner saw the following in your future: " + this.generateEvent(table);
+   }
+   else if(event == "Crimes"){
+     event = GenericGenerate( Crimes ) + " " + GenericGenerate( Punishments );
+   }
+   else if((typeof event) == "object") {
+     console.log(event);
+      if(event.Death){
+       return this.generateDeathEvent(event);
+      }
+      else if(event.Person){
+        return this.generatePersonEvent(event);
+      }
+      else{
+         return this.generateEvent(event);
+      }
+   }
+  return event
+ }
+
+  generateDeathEvent(event){
+    var deathcopy = { event: "", Death : ""};
+    Object.assign(deathcopy, event);
+    deathcopy.Death = GenericGenerate( CausesOfDeath );
+    return deathcopy;
+  }
+  generatePersonEvent(event){
+    var personcopy = { event: "", Person: { Occupation: "", Race: "", Alignment: ""}};
+    personcopy.event =  event.event;
+    Object.assign(personcopy.Person, event.Person);
+    this.generatePerson(personcopy.Person);
+    return personcopy;
+  }
+
+ generatePerson(Person){
+    if(Person.Occupation == "Adventurer"){
+       Person.Occupation = GenericGenerate( Classes );
+     }
+    else {
+       Person.Occupation = GenericGenerate( Occupations );
+    }
+    Person.Race = GenericGenerate( Races );
+    Person.Alignment = GenericGenerate( Alignments );
+ }
+
 
  generateNumberOfEvents(age) {
     if( age < 20) {

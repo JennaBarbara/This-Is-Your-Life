@@ -1,14 +1,16 @@
 export class origin {
-  Occupation:string;
+  //Occupation:string;
   ParentsKnown: string;
   // ParentsRace: string;
   Birthplace: string;
-  // Parents: individual[];
+  Mother: individual;
+  Father: individual;
+  Heritage: string;
   //NumberofSiblings: number;
   Siblings: sibling[];
-   Family: string;
-   FamilyWealth: string[];
-   ChildhoodMemory: string;
+  Family: string;
+  FamilyWealth: string[];
+  ChildhoodMemory: string;
   }
 export class individual {
   Alignment: string;

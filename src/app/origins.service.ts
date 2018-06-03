@@ -6,7 +6,8 @@ import { of } from 'rxjs/observable/of';
 import { OriginsComponent } from './origins/origins.component';
 import { origin, individual } from './Origin';
 import { GenerateIndividual, GenerateAlignment, GenericGenerate,  RollTheDice, RollMultipleDice, getTableItem } from './Utilities';
-import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories, FamilyLifestyles, FamilyHomes, BirthOrder , Relationships }
+import { Parents, Birthplaces,FamilyTypes, Alignments, Races, Classes, Occupations, ChildhoodMemories,
+  FamilyLifestyles, FamilyHomes, BirthOrder , Relationships, HalfElfParents, HalfOrcParents, TieflingParents}
  from './OriginTables';
 
 
@@ -22,10 +23,13 @@ export class OriginsService {
    var myOrigin  = new origin;
 
      myOrigin = {
-          Occupation: GenericGenerate( Occupations ),
+        //  Occupation: GenericGenerate( Occupations ),
           ParentsKnown: GenericGenerate( Parents ),
           Birthplace: GenericGenerate( Birthplaces ),
           Siblings: this.GenerateSiblings( myBasics.Race ),
+          Mother: GenerateIndividual(),
+          Father: GenerateIndividual(),
+          Heritage: this.GenerateHeritage(myBasics.Race),
         //  NumberofSiblings: this.GenerateNumberofSiblings(myBasics.Race),
           Family: GenericGenerate( FamilyTypes ),
           FamilyWealth: this.GenerateFamilyWealth(),
@@ -75,6 +79,23 @@ export class OriginsService {
       return RollTheDice(6) + 2;
     else
       return RollTheDice(8) + 3;
+  }
+
+  GenerateHeritage(race){
+    if(race == "Half-elf") {
+      return GenericGenerate( HalfElfParents );
+    }
+    else if(race == "Half-orc"){
+      return GenericGenerate( HalfOrcParents );
+    }
+    else if(race == "Tiefling"){
+      return GenericGenerate( TieflingParents );
+    }
+    else{
+      return 0;
+    }
+
+
   }
 
 }

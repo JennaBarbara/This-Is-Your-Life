@@ -4,6 +4,6 @@
 
 export class Life {
   Age : Number;
-  Events : string[];
+ Events : any[];
 //  Events: Number;
 }

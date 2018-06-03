@@ -4,10 +4,16 @@
   </h2>
 
   <div class=text>
-    Occupation: {{myOrigin.Occupation}}
-    <br /><br />
     Parents: {{myOrigin.ParentsKnown}}
       <br /><br />
+    Mother: <b>Alignment:</b> {{myOrigin.Mother.Alignment}} | <b>Occupation:</b> {{myOrigin.Mother.Occupation}} | <b>Status:</b> {{myOrigin.Mother.Status}}
+    <br /><br />
+    Father: <b>Alignment:</b> {{myOrigin.Father.Alignment}} | <b>Occupation:</b> {{myOrigin.Father.Occupation}} | <b>Status:</b> {{myOrigin.Father.Status}}
+    <br /><br />
+    <div *ngIf="myOrigin.Heritage != 0">
+    Heritage: {{myOrigin.Heritage}}
+    <br /><br />
+  </div>
     Birthplace: {{myOrigin.Birthplace}}
     <br /><br />
     <div *ngIf="myOrigin.Siblings.length == 0">Siblings: You have no siblings</div>

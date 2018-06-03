@@ -55,7 +55,32 @@ n : 1,
 d : 100
 };
 
-//TODO:add nonhuman parents tables
+export const HalfElfParents = {
+   "1-5": "One parent was an elf and the other was a human.",
+   "6": "One parent was an elf and the other was a half-elf",
+   "7": "One parent was a human and the other was a half-elf",
+   "8": "Both parents were half-elves.",
+   n : 1,
+   d : 8
+ };
+
+ export const HalfOrcParents = {
+    "1-3": "One parent was an orc and the other was a human.",
+    "4-5": "One parent was an orc and the other was a half-orc",
+    "6-7": "One parent was a human and the other was a half-orc",
+    "8": "Both parents were half-orcs.",
+    n : 1,
+    d : 8
+  };
+
+  export const TieflingParents = {
+     "1-4": "Both parents were humans, their infernal heritage dormant until you came along.",
+     "5-6": "One parent was a tiefling and the other was a human.",
+     "7": "One parent was a tiefling and the other was a devil.",
+     "8": "One parent was a human and the other was a devil.",
+     n : 1,
+     d : 8
+   };
 
 export const Birthplaces = {
 "1-50":"Home",
@@ -110,7 +135,7 @@ export const CausesOfDeath = {
   "8": "Dead, cause of death: Apparent suicide",
   "9": "Dead, cause of death: Torn apart by an animal or a natural disaster",
   "10": "Dead, cause of death: Consumed by a monster",
-  "ll":"Dead, cause of death: Executed for a crime or tortured to death",
+  "11":"Dead, cause of death: Executed for a crime or tortured to death",
   "12":"Dead, cause of death: Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg",
   n : 1,
   d : 12
@@ -220,5 +245,4 @@ export const BirthOrder = {
 "8-12": "Younger",
 n : 2,
 d : 6
-
 };

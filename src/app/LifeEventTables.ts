@@ -96,7 +96,7 @@ export const ArcaneMatters =
   "7" : "You encountered something magical. You turned invisible for a time.",
   "8" : "You encountered something magical. You identified an illusion for what it was.",
   "9" : "You encountered something magical. You saw a creature being conjured by magic.",
-  "10" : "diviner",//You encountered something magical. Your fortune was read by a diviner. Roll twice on the Life Events table, but don’t apply the results. Instead, the DM picks one event as a portent of your future (which might or might not come true). //TODO divination handling
+  "10" : "diviner",//You encountered something magical. Your fortune was read by a diviner. Roll twice on the Life Events table, but don’t apply the results. Instead, the DM picks one event as a portent of your future (which might or might not come true).
   n : 1,
   d : 10
 };
@@ -104,7 +104,7 @@ export const ArcaneMatters =
 export const Boons =
 {
   "1" : "You gained a bit of good fortune. A friendly wizard gave you a spell scroll containing one cantrip (of the DM's choice).",
-  "2" : "You gained a bit of good fortune. You saved the life of a commoner, who now owes you a life debt. This individual accompanies you on your travels and performs mundane tasks for you, but will leave if neglected, abused, or imperiled. Determine details about this character by using the supplemental tables and working with your DM", //TODO a person
+  "2" : { event: "You gained a bit of good fortune. You saved the life of a commoner, who now owes you a life debt. This individual accompanies you on your travels and performs mundane tasks for you, but will leave if neglected, abused, or imperiled. Some details about this individual are as follows: ", Person : {  Occupation: "", Race: "", Alignment: ""}},
   "3" : "You gained a bit of good fortune. You found a riding horse.",
   "4" : "You gained a bit of good fortune. ou found some money. You have ld20 gp in addition to your regular starting funds.",
   "5" : "You gained a bit of good fortune. A relative bequeathed you a simple weapon of your choice.",
@@ -127,7 +127,7 @@ export const Crimes =
   "5" : "You were accused of committing smuggling.",
   "6" : "You were accused of committing a kidnapping.",
   "7" : "You were accused of committing extortion.",
-  "8" : "You were accused of committing counterfeiting.",
+  "8" : "You were accused of counterfeiting.",
   n : 1,
   d : 8
 };
@@ -147,17 +147,17 @@ export const SuperNaturalEvents =
 {
   "01-05"  : "You had a supernatural experience. You were ensorcelled by a fey and enslaved for 1d6 years before you escaped.",
   "06-10"  : "You had a supernatural experience. You saw a demon and ran away before it could do anything to you.",
-  "11-15"  : "You had a supernatural experience. A devil tempted you. Make a DC 10 Wisdom saving throw. On a failed save, your alignment shifts one step toward evil (if it's not evil already), and you start the game with an additional 1d20 + 50 gp",
+  "11-15"  : "You had a supernatural experience. A devil tempted you. Make a DC 10 Wisdom saving throw. On a failed save, your alignment shifts one step toward evil (if it's not evil already), and you start the game with an additional 1d20 + 50 gp.",
   "16-20"  : "You had a supernatural experience. You woke up one morning miles from your home, with no idea how you got there.",
   "21-30"  : "You had a supernatural experience. You visited a holy site and felt the presence of the divine there.",
   "31-40"  : "You had a supernatural experience. You witnessed a falling red star, a face appearing in the frost, or some other bizarre happening. You are certain that it was an omen of some sort.",
   "41-50"  : "You had a supernatural experience. You witnessed a minor miracle.",
-  "51-60"  : "You had a supernatural experience. You explored an empty house and found it to be haunted",
+  "51-60"  : "You had a supernatural experience. You explored an empty house and found it to be haunted.",
   "61-70"  : "You had a supernatural experience. You were briefly possessed. Roll a d6 to determine what type of creature possessed you: 1, celestial; 2, devil; 3, demon; 4, fey; 5, elemental; 6, undead.",
   "71-75" : "You had a supernatural experience. You saw a ghost.",
   "76-80" : "You had a supernatural experience. You saw a ghoul feeding on a corpse.",
   "86-90"  : "You had a supernatural experience. A celestial or a fiend visited you in your dreams to give a warning of dangers to come.",
-  "91-95" : "You had a supernatural experience. You briefly visited the Feywild or the Shadowfell",
+  "91-95" : "You had a supernatural experience. You briefly visited the Feywild or the Shadowfell.",
   "96-100" : "You had a supernatural experience. You saw a portal that you believe leads to another plane of existence.",
   n : 1,
   d : 100
@@ -165,17 +165,17 @@ export const SuperNaturalEvents =
 
 export const Tragedies =
 {
-  "1-2" : "You suffered a tragedy. A family member or a close friend died. Roll on the Cause of Death supplemental table to find out how.", //TODO add cause of death handling
-  "3" : "You suffered a tragedy. A friendship ended bitterly, and the other person is now hostile to you. The cause might have been a misunderstanding or something you or the former friend did",
-  "4" : "You suffered a tragedy. You lost all your possessions in a disaster, and you had to rebuild your life",
-  "5" : "You suffered a tragedy. You were imprisoned for a crime you didn’t commit and spent 1d6 years at hard labor, in jail, or shackled to an oar in a slave galley",
+  "1-2" : { event: "You suffered a tragedy. A family member or a close friend died.", Death : "unknown"},
+  "3" : "You suffered a tragedy. A friendship ended bitterly, and the other person is now hostile to you. The cause might have been a misunderstanding or something you or the former friend did.",
+  "4" : "You suffered a tragedy. You lost all your possessions in a disaster, and you had to rebuild your life.",
+  "5" : "You suffered a tragedy. You were imprisoned for a crime you didn’t commit and spent 1d6 years at hard labor, in jail, or shackled to an oar in a slave galley.",
   "6" : "You suffered a tragedy. War ravaged your home community, reducing everything to rubble and ruin. In the aftermath, you either helped your town rebuild or moved somewhere else.",
-  "7" : "You suffered a tragedy. A lover disappeared without a trace. You have been looking for that person ever since",
-  "8" : "You suffered a tragedy. A terrible blight in your home community caused crops to fail, and many starved. You lost a sibling or some other family member",
+  "7" : "You suffered a tragedy. A lover disappeared without a trace. You have been looking for that person ever since.",
+  "8" : "You suffered a tragedy. A terrible blight in your home community caused crops to fail, and many starved. You lost a sibling or some other family member.",
   "9" : "You suffered a tragedy. You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important. The attitude of your family members toward you becomes indifferent at best, though they might eventually forgive you.",
   "10" : "You suffered a tragedy. For a reason you were never told, you were exiled from your community. You then either wandered in the wilderness for a time or promptly found a new place to live.",
   "11" : "You suffered a tragedy. A romantic relationship ended. Roll 3d6. An odd number means it ended with bad feelings, while an even number means it ended amicably.",
-  "12" : "You suffered a tragedy. A current or prospective romantic partner of yours died. Roll on the Cause of Death supplemental table to find out how. lf the result is murder, roll a d12. On a 1, you were responsible, whether directly or indirectly.",  //TODO add cause of death handling
+  "12" : { event: "You suffered a tragedy. A current or prospective romantic partner of yours died.", Death : "unknown"},
   n : 1,
   d : 12
 };
@@ -200,9 +200,9 @@ export const WeirdStuff =
   "3"  : "Something truly strange happened to you. You were enslaved by a hag, a satyr, or some other being and lived in that creature’s thrall for 1d6 years.",
   "4"  : "Something truly strange happened to you. A dragon held you as a prisoner for 1d4 months until adventurers killed it.",
   "5"  : "Something truly strange happened to you. You were taken captive by a race of evil humanoids such as drow, kuo-toa, or quaggoths. You lived as a slave in the Underdark until you escaped.",
-  "6"  : "Something truly strange happened to you. You served a powerful adventurer as a hireling. You have only recently left that service. Use the supplemental tables and work with your DM to determine the basic details about your former employer.", //TODO individual generator
-  "7"  : "Something truly strange happened to you. You went insane for 1d6 years and recently regained your sanity. A tic or some other bit of odd behavior might linger",
-  "8"  : "Something truly strange happened to you. A lover of yours was secretly a silver dragon",
+  "6"  : { event: "Something truly strange happened to you. You served a powerful adventurer as a hireling. You have only recently left that service. Some details about your former employer are as follows: ", Person : {  Occupation: "Adventurer", Race: "", Alignment: ""}},
+  "7"  : "Something truly strange happened to you. You went insane for 1d6 years and recently regained your sanity. A tic or some other bit of odd behavior might linger.",
+  "8"  : "Something truly strange happened to you. A lover of yours was secretly a silver dragon.",
   "9"  : "Something truly strange happened to you. You were captured by a cult and nearly sacrificed on an altar to the foul being the cultists served. You escaped, but you fear they will find you.",
   "10" : "Something truly strange happened to you. You met a demigod, an archdevil, an archfey, a demon lord, or a titan, and you lived to tell the tale.",
   "11" : "Something truly strange happened to you. You were swallowed by a giant fish and spent a month in its gullet before you escaped.",
@@ -215,19 +215,35 @@ export const WeirdStuff =
 
 export const LifeEvents =
 {
-  "01-10" : Tragedies,// "You suffered a tragedy. Roll on the Tragedies table.",
-  "11-20" : Boons,//"You gained a bit of good fortune. Roll on the Boons table.",
-  "21-30" : "You fell in love or got married. lf you get this result more than once, you can choose to have a child instead. Work with your DM to determine the identity of your love interest.", // TODO add identity handling
-  "31-40" : "You made an enemy of an adventurer. Roll a d6. An odd number indicates you are to blame for the rift, and an even number indicates you are blameless. Use the supplemental tables and work with your DM to determine this hostile character's identity and the danger this enemy poses to you", // TODO add identity handling
-  "41-50" : "You made a friend of an adventurer. Use the supplemental tables and work with your DM to add more detail to this friendly character and establish how your friendship began.", // TODO add identity handling
+  "01-10" : Tragedies,
+  "11-20" : Boons,
+  "21-30" : { event: "You fell in love or got married. lf you get this result more than once, you can choose to have a child instead. Some details about your love interest or child are as follows: ", Person : {  Occupation: "", Race: "", Alignment: ""} },
+  "31-40" : { event: "You made an enemy of an adventurer. Roll a d6. An odd number indicates you are to blame for the rift, and an even number indicates you are blameless. Some deatils about this enemy are as follows: ", Person : {  Occupation: "Adventurer", Race: "", Alignment: ""}},
+  "41-50" : { event: "You made a friend of an adventurer. Some details about your friend are as follows: ", Person : {  Occupation: "Adventurer", Race: "", Alignment: ""}},
   "51-70" : "You spent time working in a job related to your background. Start the game with an extra 2d6 gp.",
-  "71-75" : "You met someone important. Use the supplemental tables to determine this character's identity and how this individual feels about you. Work out additional details with your DM as needed to fit this character into your backstory",
+  "71-75" : { event: "You met someone important. Some details about this person are as follows: ", Person : {  Occupation: "", Race: "", Alignment: ""}},
   "76-80" : Adventures,
   "81-85" : SuperNaturalEvents,
   "86-90" : War,
-  "91-95" : Crimes,
+  "91-95" : "Crimes",
   "96-99" : ArcaneMatters,
   "100"   : WeirdStuff,
   n : 1,
   d : 100
+};
+
+export const CausesOfDeath = {
+  "1": "They died of unknown causes.",
+  "2": "They were murdered. Roll a d12. On a 1, you were responsible, whether directly or indirectly.",
+  "3": "They were killed in battle.",
+  "4": "They died in an accident related to class or occupation.",
+  "5": "They died in an accident unrelated to class or occupation.",
+  "6-7": "They died of natural causes, such as disease or old age.",
+  "8": "They died in an apparent suicide.",
+  "9": "They were torn apart by an animal or a natural disaster.",
+  "10":"They were consumed by a monster.",
+  "11":"They were executed for a crime or tortured to death.",
+  "12":"They died in a bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg.",
+  n : 1,
+  d : 12
 };

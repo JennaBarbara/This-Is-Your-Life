@@ -8,7 +8,14 @@
   <div *ngIf="myLife.Events.length == 1">You have expericed the following life event:</div>
 <div *ngIf=" myLife.Events.length > 1">You have expericed the following life events:</div>
 <li *ngFor="let event of myLife.Events">
-{{event}}
+
+  <ng-container *ngIf="event.Death; else personBlock">{{event.event}} {{event.Death}}</ng-container>
+  <ng-template #personBlock>
+      <ng-container *ngIf="event.Person;else elseBlock">{{event.event}} <b>Occupation: </b>{{event.Person.Occupation}} | <b>Race: </b>{{event.Person.Race}} | <b>Alignment: </b>{{event.Person.Alignment }}</ng-container>
+  </ng-template>
+  <ng-template #elseBlock>{{event}}</ng-template>
+
+
 </li>
 </div>
 </div>
