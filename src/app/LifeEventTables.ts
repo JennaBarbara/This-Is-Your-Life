@@ -218,7 +218,7 @@ export const LifeEvents =
   "01-10" : Tragedies,
   "11-20" : Boons,
   "21-30" : { event: "You fell in love or got married. lf you get this result more than once, you can choose to have a child instead. Some details about your love interest or child are as follows: ", Person : {  Occupation: "", Race: "", Alignment: ""} },
-  "31-40" : { event: "You made an enemy of an adventurer. Roll a d6. An odd number indicates you are to blame for the rift, and an even number indicates you are blameless. Some deatils about this enemy are as follows: ", Person : {  Occupation: "Adventurer", Race: "", Alignment: ""}},
+  "31-40" : { event: "You made an enemy of an adventurer. Roll a d6. An odd number indicates you are to blame for the rift, and an even number indicates you are blameless. Some details about this enemy are as follows: ", Person : {  Occupation: "Adventurer", Race: "", Alignment: ""}},
   "41-50" : { event: "You made a friend of an adventurer. Some details about your friend are as follows: ", Person : {  Occupation: "Adventurer", Race: "", Alignment: ""}},
   "51-70" : "You spent time working in a job related to your background. Start the game with an extra 2d6 gp.",
   "71-75" : { event: "You met someone important. Some details about this person are as follows: ", Person : {  Occupation: "", Race: "", Alignment: ""}},

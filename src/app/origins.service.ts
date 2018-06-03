@@ -92,7 +92,7 @@ export class OriginsService {
       return GenericGenerate( TieflingParents );
     }
     else{
-      return 0;
+      return "";
     }
 
 
