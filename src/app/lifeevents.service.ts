@@ -27,7 +27,6 @@ export class LifeeventsService {
 
  generateEvents(age) {
    var NumberOfEvents = this.generateNumberOfEvents(age);
-   console.log ( NumberOfEvents);
    var Events = new Array();
    for( var i = 0; i < NumberOfEvents; i++ ) {
         var event = this.generateEvent(LifeEvents);

@@ -79,7 +79,7 @@ export const Adventures =
   "61-70" : "You went on an adventure. You were terribly frightened by something you encountered and ran away, abandoning your companions to their fate.",
   "71-80" : "You went on an adventure. You learned a great deal during your adventure. The next time you make an ability check or a saving throw, you have advantage on the roll.",
   "81-90" : "You went on an adventure. You found some treasure on your adventure. Youhave 2d6 gp left from your share of it.",
-  "91-99" : "You went on an adventure. You found a considerable amount of treasure on your adventure. You have ld20 + 50 gp left from your share of it.",
+  "91-99" : "You went on an adventure. You found a considerable amount of treasure on your adventure. You have 1d20 + 50 gp left from your share of it.",
   "100" : "You went on an adventure. You came across a common magic item (of the DM’s choice).",
   n : 1,
   d : 100

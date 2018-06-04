@@ -65,8 +65,8 @@ export const GuildArtisan = {
 };
 
 export const Hermit = {
-  "1": "My enemies ruined my reputation, and | fled to the wilds to avoid further disparagement.",
-  "2": "I am comfortable with being isolated, as I seekinner peace.",
+  "1": "My enemies ruined my reputation, and I fled to the wilds to avoid further disparagement.",
+  "2": "I am comfortable with being isolated, as I seek inner peace.",
   "3": "I never liked the people I called my friends, so it was easy for me to strike out on my own",
   "4": "I felt compelled to forsake my past, but did so with great reluctance, and sometimes I regret making that decision.",
   "5": "I lost everything—my home, my family, my friends. Going it alone was all I could do",
