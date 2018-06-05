@@ -5,8 +5,8 @@
 <div class=text>
   You are {{myLife.Age}} years old.
   <br /><br />
-  <div *ngIf="myLife.Events.length == 1">You have expericed the following life event:</div>
-<div *ngIf=" myLife.Events.length > 1">You have expericed the following life events:</div>
+  <div *ngIf="myLife.Events.length == 1">You have experienced the following life event:</div>
+<div *ngIf=" myLife.Events.length > 1">You have experienced the following life events:</div>
 <li *ngFor="let event of myLife.Events">
 
   <ng-container *ngIf="event.Death; else personBlock">{{event.event}} {{event.Death}}</ng-container>
