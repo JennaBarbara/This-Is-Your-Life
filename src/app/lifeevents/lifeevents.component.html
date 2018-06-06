@@ -11,7 +11,7 @@
 
   <ng-container *ngIf="event.Death; else personBlock">{{event.event}} {{event.Death}}</ng-container>
   <ng-template #personBlock>
-      <ng-container *ngIf="event.Person;else elseBlock">{{event.event}} <b>Occupation: </b>{{event.Person.Occupation}} | <b>Race: </b>{{event.Person.Race}} | <b>Alignment: </b>{{event.Person.Alignment }}</ng-container>
+      <ng-container *ngIf="event.Person;else elseBlock">{{event.event}} <b>Race: </b>{{event.Person.Race}} | <b>Occupation: </b>{{event.Person.Occupation}} | <b>Alignment: </b>{{event.Person.Alignment }}</ng-container>
   </ng-template>
   <ng-template #elseBlock>{{event}}</ng-template>
 

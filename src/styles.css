@@ -1,13 +1,46 @@
 body  {
-  background-color: #e2e2e2;
+  background-color: #E7E6E6;
 }
 h1 {
   text-align: center;
-  font-family: 'Slabo 27px', serif;
+  font-family: 'EB Garamond', serif;
   font-size: 350%;
+  color: #000000;
 }
 
 p, a {
   font-family: 'Roboto', sans-serif;
+  color: #000000;
 
+}
+
+.origins {
+  background-color: #f6f6ef;
+  margin: .5em;
+  padding: .3em 0;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  border-radius: 10px;
+}
+@media screen and (max-width: 480px)  {
+.origins {
+    resize: horizontal;
+
+}
+}
+
+.origins .text {
+
+  margin: 25px 25px 25px 25px;
+  padding: .3em 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.origins li {
+   margin-left: 15px;
+   list-style-type: circle;
+}
+
+h2 {
+  font-family: 'EB Garamond', serif;
+  margin: 25px 25px 25px 25px;
 }
